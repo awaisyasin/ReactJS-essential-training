@@ -30,7 +30,7 @@
 
             function Main(props) {
                 return (
-                    <section>
+                    <React.Fragment>
                         <p>A Force in {props.verb}</p>
                         <img
                             height={200}
@@ -42,7 +42,7 @@
                                 <li key={service.id}>{service.title}</li>
                             ))}
                         </ul>
-                    </section>
+                    </React.Fragment>
                 )
             }
 
