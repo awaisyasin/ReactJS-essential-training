@@ -11,15 +11,15 @@
     <body>
         <div id="root"></div>
 
-        <script type="text/javascript">
-            let ul = React.createElement(
-                "ul",
-                { style: { color: "blue" } },
-                React.createElement("li", null, "Monday"),
-                React.createElement("li", null, "Tuesday"),
-                React.createElement("li", null, "Wednesday")
+        <script type="text/babel">
+            ReactDOM.render(
+                <ul style={{ color: 'blue', backgroundColor: 'yellow' }}>
+                    <li>Monday</li>
+                    <li>Tuesday</li>
+                    <li>Wednesday</li>
+                </ul>,
+                document.getElementById('root')
             )
-            ReactDOM.render(ul, document.getElementById("root"))
         </script>
     </body>
 </html>
