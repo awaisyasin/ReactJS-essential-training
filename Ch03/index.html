@@ -12,21 +12,44 @@
         <div id="root"></div>
 
         <script type="text/babel">
+            const services = [
+                'Software development',
+                'Web development',
+                'App development',
+                'SEO services',
+                'Full stack development',
+            ]
+            const serviceObjects = services.map((service, index) => ({
+                id: index,
+                title: service,
+            }))
 
             function Header(props) {
                 return <h1>{props.name}</h1>
             }
+
             function Main(props) {
-                return <p>A Force in {props.verb}</p>
+                return (
+                    <div>
+                        <p>A Force in {props.verb}</p>
+                        <ul>
+                            {props.services.map(service => (
+                                <li key={service.id}>{service.title}</li>
+                            ))}
+                        </ul>
+                    </div>
+                )
             }
+
             function Footer(props) {
                 return <p>Copyright {props.year} All rights reserved</p>
             }
+
             function Container() {
                 return (
                     <div className='container'>
                         <Header name='Realliance' />
-                        <Main verb='Making' />
+                        <Main verb='Making' services={serviceObjects} />
                         <Footer year={new Date().getFullYear()} />
                     </div>
                 )
