@@ -12,14 +12,20 @@
         <div id="root"></div>
 
         <script type="text/babel">
+            let one = 'Monday'
+            let two = 'Tuesday'
+            let three = 'Wednesday'
             ReactDOM.render(
                 <ul style={{ color: 'blue', backgroundColor: 'yellow' }}>
-                    <li>Monday</li>
-                    <li>Tuesday</li>
-                    <li>Wednesday</li>
+                    <li>{one}</li>
+                    <li>{two}</li>
+                    <li>{three}</li>
+                    <li>{three.toUpperCase()}</li>
+                    <li>{three.length}</li>
                 </ul>,
                 document.getElementById('root')
             )
         </script>
     </body>
 </html>
+
