@@ -12,22 +12,32 @@
         <div id="root"></div>
 
         <script type="text/babel">
-            function Header() {
-                return <h1>Alliance</h1>
+
+            function Header(props) {
+                return <h1>{props.name}</h1>
             }
-            function Main() {
-                return <p>A Force in Makin'</p>
+            function Main(props) {
+                return <p>A Force in {props.verb}</p>
+            }
+            function Footer(props) {
+                return <p>Copyright {props.year} All rights reserved</p>
             }
             function Container() {
                 return (
                     <div className='container'>
-                        <Header />
-                        <Main />
+                        <Header name='Realliance' />
+                        <Main verb='Making' />
+                        <Footer year={new Date().getFullYear()} />
                     </div>
                 )
             }
 
-            ReactDOM.render(<Container />, document.getElementById('root'))
+            const root = ReactDOM.createRoot(document.getElementById('root'))
+            root.render(
+                <React.StrictMode>
+                    <Container />
+                </React.StrictMode>
+            )
         </script>
     </body>
 </html>
