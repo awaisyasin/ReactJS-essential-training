@@ -1,5 +1,5 @@
 import './App.css'
-import { Link } from 'react-router-dom'
+import { Link, Outlet } from 'react-router-dom'
 
 function Home() {
     return (
@@ -13,6 +13,7 @@ function Home() {
         </div>
     )
 }
+
 export function About() {
     return (
         <div className='App'>
@@ -21,10 +22,21 @@ export function About() {
                 <Link to='/about'>About</Link>
                 <Link to='/contact'>Contact</Link>
             </nav>
-            <h1>About Us</h1>
+            <h1>
+                <Link to='/about/history'>About Us</Link>
+            </h1>
+
+            <Link to='/about'>
+                <Outlet />
+            </Link>
         </div>
     )
 }
+
+export function History() {
+    return <h1>Our History</h1>
+}
+
 export function Contact() {
     return (
         <div className='App'>
